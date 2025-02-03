@@ -53,11 +53,7 @@ def k_mean_evaluate(true_labels, pred_labels, note= ''):
                    shape=(len(true_classes), len(pred_classes)),
                    dtype=int).toarray()
     row_ind, col_ind = linear_sum_assignment(A, maximize=True)
-
-    # **重新排列 A**
     A_reordered = A[row_ind[:, np.newaxis], col_ind]
-
-    # 可视化匹配矩阵（如果 show_A 可用）
     show_A(A_reordered, note)
     cluster_measures(true_labels, pred_labels, note)
 
