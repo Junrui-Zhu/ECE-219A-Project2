@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from nmf import nmf_dim_reduction
 from pca_svd import PCA_SVD
 from k_mean import k_means_clustering, k_mean_evaluate
+from nmf_svd_kmeans import evaluate_nmf_svd, plot_results
 newsgroups_all = fetch_20newsgroups(subset='all', remove = ('headers', 'footers', 'quotes'))
     
 vectorizer = TfidfVectorizer(min_df = 3, stop_words = 'english')
