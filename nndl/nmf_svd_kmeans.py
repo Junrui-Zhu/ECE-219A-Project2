@@ -16,7 +16,7 @@ def evaluate_nmf_svd(tfidf, true_labels, r_values, k=2):
     for r in r_values:
         # NMF 降维
         nmf_model, W = nmf_dim_reduction(tfidf, n_components=r)
-        labels_nmf, _ = k_means_clustering(W, k=k)
+        labels_nmf, _ = k_means_clustering(W, k=k, max_iter = 1000)
         metrics_nmf = cluster_measures(true_labels, labels_nmf)
         for key in results_nmf.keys():
             results_nmf[key].append(metrics_nmf[key])

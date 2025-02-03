@@ -4,6 +4,7 @@ Also, by running this directly, you get answer for question 1
 """
 from sklearn.datasets import fetch_20newsgroups
 from sklearn.feature_extraction.text import TfidfVectorizer
+
 def get_tfidf_labels(class1 = ['comp.graphics', 'comp.os.ms-windows.misc', 'comp.sys.ibm.pc.hardware', 'comp.sys.mac.hardware']
     , class2 = ['rec.autos', 'rec.motorcycles', 'rec.sport.baseball', 'rec.sport.hockey']):
     newsgroups_all = fetch_20newsgroups(subset='all', remove = ('headers', 'footers', 'quotes'), categories = class1 + class2)

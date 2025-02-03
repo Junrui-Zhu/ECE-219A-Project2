@@ -17,7 +17,7 @@ def visualize_clusters(tfidf_matrix, true_labels, r_svd=10, r_nmf=8, k=2):
 
     # Step 2: Further reduce to 2D using SVD for visualization
     _, svd_vis = PCA_SVD(SVD_matrix, n_components=2)
-    _, nmf_vis = PCA_SVD(NMF_matrix, n_components=2)
+    _, nmf_vis = nmf_dim_reduction(NMF_matrix, n_components=2)
 
     # Step 3: Apply K-Means clustering
     labels_svd, _ = k_means_clustering(SVD_matrix)
