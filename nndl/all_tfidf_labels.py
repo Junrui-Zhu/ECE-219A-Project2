@@ -1,3 +1,7 @@
+"""
+This file returns the tfidf matrix and ground truth label.
+Also, by running this directly, you get answer for question 1
+"""
 from sklearn.datasets import fetch_20newsgroups
 from sklearn.feature_extraction.text import TfidfVectorizer
 def get_tfidf_labels(class1 = ['comp.graphics', 'comp.os.ms-windows.misc', 'comp.sys.ibm.pc.hardware', 'comp.sys.mac.hardware']
