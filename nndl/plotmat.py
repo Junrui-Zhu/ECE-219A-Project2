@@ -1,5 +1,5 @@
 """
-This file visualize a matrix in an elegant way.
+This file visualize a matrix in an elegant way
 """
 import itertools
 import numpy as np
