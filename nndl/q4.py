@@ -1,8 +1,9 @@
-from tfidf import all_tfidf
+from all_tfidf_labels import get_tfidf_labels
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.decomposition import TruncatedSVD
 
+all_tfidf, _ = get_tfidf_labels()
 svd = TruncatedSVD(n_components=1000)
 svd_reducted_matrix = svd.fit_transform(all_tfidf)
 
