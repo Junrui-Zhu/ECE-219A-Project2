@@ -1,3 +1,8 @@
+"""
+This file performs umap.
+By running this file, you get answers for question 11,12,13
+"""
+
 from umap import UMAP  
 from all_tfidf_labels import *
 from k_mean import *
