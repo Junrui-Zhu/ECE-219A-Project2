@@ -8,13 +8,7 @@ from all_tfidf_labels import get_tfidf_labels
 def visualize_clusters(tfidf_matrix, true_labels, r_svd=10, r_nmf=8, k=2):
     """
     Visualize the clustering results using SVD and NMF.
-    
-    Parameters:
-        tfidf_matrix: array-like, TF-IDF feature matrix
-        true_labels: array-like, ground truth labels
-        r_svd: int, optimal number of components for SVD
-        r_nmf: int, optimal number of components for NMF
-        k: int, number of clusters for K-Means
+    Answer for problem 8 and 9
     """
 
     # Step 1: Perform dimensionality reduction (SVD)

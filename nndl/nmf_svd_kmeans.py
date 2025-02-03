@@ -4,7 +4,9 @@ from nmf import nmf_dim_reduction
 from pca_svd import PCA_SVD
 from k_mean import k_means_clustering, cluster_measures
 from all_tfidf_labels import get_tfidf_labels
-
+"""
+Answer for problem 5,6,7
+"""
 def evaluate_nmf_svd(tfidf, true_labels, r_values, k=2):
     results_nmf = {"Homogeneity": [], "Completeness": [], "V-measure": [], "Adjusted Rand Index": [], "Adjusted Mutual Information Score": []}
     results_svd = {"Homogeneity": [], "Completeness": [], "V-measure": [], "Adjusted Rand Index": [], "Adjusted Mutual Information Score": []}
