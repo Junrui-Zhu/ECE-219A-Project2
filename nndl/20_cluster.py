@@ -1,3 +1,6 @@
+"""
+This file serves only for answering question 10
+"""
 from sklearn.datasets import fetch_20newsgroups
 from sklearn.feature_extraction.text import TfidfVectorizer
 import matplotlib.pyplot as plt

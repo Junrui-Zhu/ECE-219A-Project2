@@ -1,3 +1,8 @@
+"""
+This file performs SVD algorithm.
+By running the file, you will get answer for question4
+"""
+
 from all_tfidf_labels import get_tfidf_labels
 import matplotlib.pyplot as plt
 import numpy as np

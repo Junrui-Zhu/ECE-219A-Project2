@@ -1,5 +1,5 @@
 """
-This file performs the k-mean clustering and evaluates its performance.
+This file performs the k-mean clustering and evaluates its performance(5 measurements and contingency matrix).
 Also, by running this file, it answers question 2 and 3
 """
 from sklearn.cluster import KMeans

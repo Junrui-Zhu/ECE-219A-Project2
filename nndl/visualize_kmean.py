@@ -1,8 +1,11 @@
+"""
+This file visualize the distribution of the binary cluster.
+It serves only for answering question 8&9
+"""
 import matplotlib.pyplot as plt
 from k_mean import k_means_clustering
 from nmf import nmf_dim_reduction
 from pca_svd import PCA_SVD
-
 from all_tfidf_labels import get_tfidf_labels
 
 def visualize_clusters(tfidf_matrix, true_labels, r_svd=10, r_nmf=8, k=2):

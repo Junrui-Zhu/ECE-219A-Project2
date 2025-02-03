@@ -1,12 +1,14 @@
+"""
+This file combines PCA, NMF and kmeans together.
+evaluate_nmf_svd() will calculate 5 measurements for different dimension and different methods.
+By running this file, you will get answer for problem 5,6,7
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 from nmf import nmf_dim_reduction
 from pca_svd import PCA_SVD
 from k_mean import k_means_clustering, cluster_measures
 from all_tfidf_labels import get_tfidf_labels
-"""
-Answer for problem 5,6,7
-"""
 def evaluate_nmf_svd(tfidf, true_labels, r_values, k=2):
     results_nmf = {"Homogeneity": [], "Completeness": [], "V-measure": [], "Adjusted Rand Index": [], "Adjusted Mutual Information Score": []}
     results_svd = {"Homogeneity": [], "Completeness": [], "V-measure": [], "Adjusted Rand Index": [], "Adjusted Mutual Information Score": []}
@@ -72,7 +74,6 @@ def plot_results(r_values, results_nmf, results_svd):
     plt.tight_layout()
     plt.show()
 
-# 示例调用
 if __name__ == "__main__":
     tfidf_matrix, true_labels = get_tfidf_labels()
     r_values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 50, 100] #to make this code run faster, delete 300

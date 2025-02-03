@@ -1,3 +1,6 @@
+"""
+This file visualize a matrix in an elegant way.
+"""
 import itertools
 import numpy as np
 import matplotlib.pyplot as plt
