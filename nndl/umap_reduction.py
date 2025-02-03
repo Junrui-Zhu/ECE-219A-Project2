@@ -1,10 +1,9 @@
-import umap
-from sklearn.datasets import fetch_20newsgroups
+from umap import UMAP  
 from all_tfidf_labels import *
 from k_mean import *
 
 def umap_dim_reduce(X, n_components, metric, random_state=42):
-    umap_model = umap.UMAP(n_components=n_components, metric=metric, random_state=random_state)
+    umap_model = UMAP(n_components=n_components, metric=metric, random_state=random_state)
     X_reduced = umap_model.fit_transform(X)
     return umap_model, X_reduced
 
