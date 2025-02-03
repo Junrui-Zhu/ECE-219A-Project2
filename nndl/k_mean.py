@@ -1,3 +1,7 @@
+"""
+This file performs the k-mean clustering and evaluates its performance.
+Also, by running this file, it answers question 2 and 3
+"""
 from sklearn.cluster import KMeans
 import numpy as np
 from scipy.sparse import coo_matrix
