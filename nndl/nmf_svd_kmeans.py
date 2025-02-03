@@ -76,3 +76,7 @@ if __name__ == "__main__":
     r_values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 50, 100] #to make this code run faster, delete 300
     results_nmf, results_svd = evaluate_nmf_svd(tfidf_matrix, true_labels, r_values)
     plot_results(r_values, results_nmf, results_svd)
+
+"""
+SVD:10 NMF:8
+"""
