@@ -2,7 +2,7 @@
 This file performs the k-mean clustering and evaluates its performance.
 Also, by running this file, it answers question 2 and 3
 """
-from sklearn.cluster import KMeans
+from sklearn.cluster import MiniBatchKMeans
 import numpy as np
 from scipy.sparse import coo_matrix
 from all_tfidf_labels import get_tfidf_labels
@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import homogeneity_score, completeness_score, v_measure_score, adjusted_rand_score, adjusted_mutual_info_score
 
 def k_means_clustering(tf_idf_matrix, k=2, random_state=0, max_iter=1000, n_init=30):
-    kmeans = KMeans(n_clusters=k, random_state=random_state, max_iter=max_iter, n_init=n_init)
+    kmeans = MiniBatchKMeans(n_clusters=k, random_state=random_state, max_iter=max_iter, n_init=n_init)
     kmeans.fit(tf_idf_matrix)
     return kmeans.labels_, kmeans.cluster_centers_
 
