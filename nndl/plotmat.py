@@ -79,3 +79,6 @@ def plot_mat(mat, xticklabels = None, yticklabels = None, pic_fname = None, size
         plt.savefig(pic_fname, dpi=300, transparent=True)
     plt.show()
     plt.close()
+
+if __name__ == "__main__":
+    plot_mat(np.array([[1, 1, 1], [2, 2, 2]]))
