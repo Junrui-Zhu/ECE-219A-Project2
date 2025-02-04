@@ -23,3 +23,5 @@ if __name__ == "__main__":
             y_pred, _ = k_means_clustering(X_reduced, k=20)
             measurements.append(k_mean_evaluate(y, y_pred, note=' for UMAP '+str(n_components)+' '+metric))
 
+    
+
