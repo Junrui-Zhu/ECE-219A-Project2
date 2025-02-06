@@ -8,7 +8,7 @@ from nmf import nmf_dim_reduction
 from pca_svd import PCA_SVD
 from all_tfidf_labels import get_tfidf_labels
 
-def visualize_clusters(tfidf_matrix, true_labels, r_svd=10, r_nmf=8, k=2):
+def visualize_clusters(tfidf_matrix, true_labels, r_svd=9, r_nmf=7, k=2):
     """
     Visualize the clustering results using SVD and NMF.
     Answer for problem 8 and 9
