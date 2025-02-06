@@ -30,7 +30,7 @@ def show_A(A, note):
     plt.colorbar()
     plt.show()
 
-def cluster_measures(true_labels, pred_labels, note):
+def cluster_measures(true_labels, pred_labels, note=""):
    
     metrics = {
         "Homogeneity": homogeneity_score(true_labels, pred_labels),

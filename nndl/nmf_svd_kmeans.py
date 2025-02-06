@@ -14,20 +14,23 @@ def evaluate_nmf_svd(tfidf, true_labels, r_values, k=2):
     results_svd = {"Homogeneity": [], "Completeness": [], "V-measure": [], "Adjusted Rand Index": [], "Adjusted Mutual Information Score": []}
     svd_model, SVD_matrix = PCA_SVD(tfidf, n_components=max(r_values))
     reduced_tfidf_dict = {r: SVD_matrix[:, :r] for r in r_values}  # 预存降维后的结果
-
     for r in r_values:
         # NMF 降维
         nmf_model, W = nmf_dim_reduction(tfidf, n_components=r)
         labels_nmf, _ = k_means_clustering(W, k=k, max_iter = 1000)
-        metrics_nmf = cluster_measures(true_labels, labels_nmf)
+        metrics_nmf = cluster_measures(true_labels, labels_nmf, note = "nmf:" + str(r))
         for key in results_nmf.keys():
             results_nmf[key].append(metrics_nmf[key])
 
         reduced_tfidf = reduced_tfidf_dict[r]
         labels_svd, _ = k_means_clustering(reduced_tfidf, k=k)
-        metrics_svd = cluster_measures(true_labels, labels_svd)
+        metrics_svd = cluster_measures(true_labels, labels_svd, note = "pca:" + str(r))
         for key in results_svd.keys():
             results_svd[key].append(metrics_svd[key])
+    averages_nmf = {key: sum(values) / len(values) for key, values in results_nmf.items()}
+    print(averages_nmf)
+    averages_svd = {key: sum(values) / len(values) for key, values in results_svd.items()}
+    print(averages_svd)
     return results_nmf, results_svd
 
 def plot_results(r_values, results_nmf, results_svd):
@@ -81,5 +84,5 @@ if __name__ == "__main__":
     plot_results(r_values, results_nmf, results_svd)
 
 """
-SVD:10 NMF:8
+SVD:9 NMF:7
 """
