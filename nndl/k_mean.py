@@ -52,12 +52,14 @@ def k_mean_evaluate(true_labels, pred_labels, note= ''):
     A = coo_matrix((np.ones_like(result), (true_indices, pred_indices)),
                    shape=(len(true_classes), len(pred_classes)),
                    dtype=int).toarray()
-    row_ind, col_ind = linear_sum_assignment(A, maximize=True)
-    A_reordered = A[row_ind[:, np.newaxis], col_ind]
-    show_A(A_reordered, note)
+    if A.shape[0] == A.shape[1]:
+        row_ind, col_ind = linear_sum_assignment(A, maximize=True)
+        A = A[row_ind[:, np.newaxis], col_ind]                  
+    show_A(A, note)
     cluster_measures(true_labels, pred_labels, note)
 
 if __name__ == "__main__":
     tfidf, ground_truth = get_tfidf_labels()
+    print(np.unique(ground_truth).shape)
     labels, _ = k_means_clustering(tfidf)
     k_mean_evaluate(ground_truth, labels)
