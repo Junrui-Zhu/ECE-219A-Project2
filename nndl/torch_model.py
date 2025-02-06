@@ -1,11 +1,11 @@
 import torch
 import torch.nn as nn
-from torchvision import transforms, datasets
+from sklearn.model_selection import train_test_split
 from torch.utils.data import DataLoader, TensorDataset
 import numpy as np
-
 from tqdm import tqdm
 from sklearn.base import TransformerMixin
+from load_images import load_images_data
     
 class FeatureExtractor(nn.Module):
     def __init__(self):
@@ -44,7 +44,6 @@ class MLP(torch.nn.Module):
         )
         self.cuda()
     
-    
     def forward(self, X):
         return self.model(X)
     
@@ -61,16 +60,12 @@ class MLP(torch.nn.Module):
         dataloader = DataLoader(dataset, batch_size=128, shuffle=True)
 
         for epoch in tqdm(range(100)):
-            epoch_loss = 0.0
             for X_batch, y_batch in dataloader:
                 optimizer.zero_grad()  # Reset gradients
                 y_pred = self.model(X_batch)  # Forward pass
                 loss = criterion(y_pred, y_batch)  # Compute loss
                 loss.backward()  # Backpropagation
                 optimizer.step()  # Update weights
-                epoch_loss += loss.item()
-            
-            print(f"Epoch {epoch+1}, Loss: {epoch_loss:.4f}")
         return self
     
     def eval(self, X_test, y_test):
@@ -153,12 +148,13 @@ class Autoencoder(torch.nn.Module, TransformerMixin):
         with torch.no_grad():
             return self.encoder(X).cpu().numpy()
         
-# assert torch.cuda.is_available()
-# feature_extractor = FeatureExtractor().cuda().eval()
+if __name__ == '__main__':
+    X, y = load_images_data()
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    
+    mlp = MLP(num_features=X.shape[1])
+    mlp.train(X_train, y_train)
 
-# dataset = datasets.ImageFolder(root='./flower_photos',
-#                                 transform=transforms.Compose([transforms.Resize(224),
-#                                                                 transforms.CenterCrop(224),
-#                                                                 transforms.ToTensor(),
-#                                                                 transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])]))
-# dataloader = DataLoader(dataset, batch_size=64, shuffle=True)
+    accuracy = mlp.eval(X_test, y_test)
+
+    
