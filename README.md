@@ -55,13 +55,14 @@ This project requires the following libraries and tools. Use the provided enviro
 - hdbscan
 - torch
 - clip
+- sentence_transformers
 ---
 
 ## File Structure
 This Project is organized as follows:
 ```bash
-├── pokemon_images                
-├── flower_photos/       
+├── pokemon_images/...                
+├── flower_photos/...   
 ├── nndl/                 # Source code
 │   ├── 20_cluster.py         
 │   ├── agg_cluster.py
