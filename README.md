@@ -22,23 +22,24 @@ Necessary steps to run the code:
    ```
 
 3. Each python script performs a certain algorithm, performs a certain task, or answers several questions by running it. Code comments sre provided at the beginning of each python script. For example:
- Question 1: all_tfidf_labels.py
- Question 2,3: k_mean.py
- Question 4: pca_svd.py
- Question 5,6,7: nmf_svd_kmeans.py
- Question 8,9: visualize_kmean.py
- Question 10: 20_cluster.py
- Question 11,12,13: umap_reduction.py
- Question 14: agg_cluster.py
- Question 15,16: hdbscan_cluster.py
- Question 17: text_dim_reduction_and_cluster.py
- Question 21: helper-code.ipynb
- Question 23: tSNE_visualization.py
- Question 24: images_dim_reduction_and_cluster.py
- Question 25: torch_model.py
- Question 26: pokemon_image_select.py
- Question 27: pokemon_type_select.py
- Question 28: pokemon_cluster_visualization.py
+- Question 1: all_tfidf_labels.py
+- Question 2,3: k_mean.py
+- Question 4: pca_svd.py
+- Question 5,6,7: nmf_svd_kmeans.py
+- Question 8,9: visualize_kmean.py
+- Question 10: 20_cluster.py
+- Question 11,12,13: umap_reduction.py
+- Question 14: agg_cluster.py
+- Question 15,16: hdbscan_cluster.py
+- Question 17: text_dim_reduction_and_cluster.py
+- Question 18: sbert_embedding.py
+- Question 21: helper-code.ipynb
+- Question 23: tSNE_visualization.py
+- Question 24: images_dim_reduction_and_cluster.py
+- Question 25: torch_model.py
+- Question 26: pokemon_image_select.py
+- Question 27: pokemon_type_select.py
+- Question 28: pokemon_cluster_visualization.py
 ---
 
 ## Dependencies
