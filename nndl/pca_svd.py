@@ -1,6 +1,6 @@
 """
 This file performs SVD algorithm.
-By running the file, you will get answer for question4
+By running the file, you will get answer for question 4
 """
 
 from all_tfidf_labels import get_tfidf_labels
