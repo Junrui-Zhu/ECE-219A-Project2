@@ -1,3 +1,7 @@
+"""
+This file performs NMF dimensionality reduction.
+"""
+
 from sklearn.decomposition import NMF
 import numpy as np
 

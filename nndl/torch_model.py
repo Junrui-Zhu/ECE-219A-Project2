@@ -1,10 +1,17 @@
+"""
+This file contains all models from helper-code, and the main function is for training the MLP.
+By running this file, you get answers for question 25.
+"""
+
 import torch
 import torch.nn as nn
+from sklearn.model_selection import train_test_split
 from sklearn.model_selection import train_test_split
 from torch.utils.data import DataLoader, TensorDataset
 import numpy as np
 from tqdm import tqdm
 from sklearn.base import TransformerMixin
+from load_images import load_images_data
 from load_images import load_images_data
     
 class FeatureExtractor(nn.Module):
@@ -156,5 +163,3 @@ if __name__ == '__main__':
     mlp.train(X_train, y_train)
 
     accuracy = mlp.eval(X_test, y_test)
-
-    

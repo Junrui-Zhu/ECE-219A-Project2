@@ -1,3 +1,7 @@
+"""
+This file predicts most related types for selected pokemon images.
+By running the file, you will get answer for question 27
+"""
 from pokemon_image_select import *
 
 def get_all_types(pokedex):

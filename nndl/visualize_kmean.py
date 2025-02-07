@@ -1,6 +1,6 @@
 """
 This file visualize the distribution of the binary cluster.
-It serves only for answering question 8&9
+It serves only for answering question 8, 9
 """
 import matplotlib.pyplot as plt
 from k_mean import k_means_clustering

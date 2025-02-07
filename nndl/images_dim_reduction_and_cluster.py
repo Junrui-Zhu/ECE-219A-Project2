@@ -1,3 +1,8 @@
+"""
+This file performs a comparative study of different dim reduction and cluster algorithms over flower photos dataset.
+By setting parameters and running this file multiple times, you get data for question 24.
+"""
+
 from load_images import load_images_data
 from sklearn.metrics import adjusted_rand_score
 from k_mean import k_means_clustering

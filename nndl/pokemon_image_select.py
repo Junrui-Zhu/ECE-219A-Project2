@@ -1,3 +1,8 @@
+"""
+This file contains all necessary functions in pokedex-helper.
+By running the file, you will get answer for question 26
+"""
+
 import numpy as np
 import pandas as pd
 from glob import glob

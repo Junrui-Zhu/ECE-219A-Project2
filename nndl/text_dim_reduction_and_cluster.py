@@ -1,3 +1,8 @@
+"""
+This file performs a comparative study of different dim reduction and cluster algorithms over text dataset.
+By setting parameters and running this file multiple times, you get data for question 17.
+"""
+
 from all_tfidf_labels import get_tfidf_labels
 from k_mean import k_means_clustering, cluster_measures
 from agg_cluster import agg

@@ -1,3 +1,7 @@
+"""
+This file performs UMAP projection and visualization of pokemon image features.
+By running the file, you will get answer for question 28
+"""
 from pokemon_image_select import *
 import plotly.express as px
 import plotly.graph_objects as go

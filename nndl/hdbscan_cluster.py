@@ -1,3 +1,8 @@
+"""
+This file implements the hdbscan clustering algorithm.
+By running this file, you will get the answer for question 15, 16
+"""
+
 import hdbscan
 from all_tfidf_labels import get_tfidf_labels
 from k_mean import cluster_measures, k_mean_evaluate

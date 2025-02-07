@@ -1,3 +1,7 @@
+"""
+This file implements the function to load images data of flower photos dataset.
+"""
+
 import numpy as np
 import os
 
@@ -7,5 +11,5 @@ def load_images_data(filename:str='./flowers_features_and_labels.npz'):
         f_all, y_all = file['f_all'], file['y_all']
         return f_all, y_all
     else:
-        print("Please run help-code.ipynb to download flower_photos images")
+        print("Please run help-code.ipynb to download flower_photos images and preprocess the data")
         return None, None

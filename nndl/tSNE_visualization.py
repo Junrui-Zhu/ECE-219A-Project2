@@ -1,3 +1,8 @@
+"""
+This file performs tSNE dim reduction and visualization.
+By running this file, you get answers for question 23
+"""
+
 from load_images import load_images_data
 import numpy as np
 import matplotlib.pyplot as plt
