@@ -75,13 +75,14 @@ This Project is organized as follows:
 │   ├── nmf.py
 │   ├── pca_svd.py
 │   ├── plotmat.py
-│   └── pokemon_cluster_visualization.py
-│   └── pokemon_image_select.py 
-│   └── pokemon_type_select.py 
-│   └── text_dim_reduction_and_cluster.py 
-│   └── torch_model.py 
-│   └── tSNE_visualization.py 
-│   └── umap_reduction.py 
+│   ├── pokemon_cluster_visualization.py
+│   ├── pokemon_image_select.py 
+│   ├── pokemon_type_select.py
+│   ├── sbert_embedding.py 
+│   ├── text_dim_reduction_and_cluster.py 
+│   ├── torch_model.py 
+│   ├── tSNE_visualization.py 
+│   ├── umap_reduction.py 
 │   └── visualize_kmean.py 
 ├── ECE219-proj2.pdf  #report in pdf format
 ├── flowers_features_and_labels.npz 
