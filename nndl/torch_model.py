@@ -13,6 +13,7 @@ from tqdm import tqdm
 from sklearn.base import TransformerMixin
 from load_images import load_images_data
 from load_images import load_images_data
+from pca_svd import PCA_SVD
     
 class FeatureExtractor(nn.Module):
     def __init__(self):
@@ -157,6 +158,7 @@ class Autoencoder(torch.nn.Module, TransformerMixin):
         
 if __name__ == '__main__':
     X, y = load_images_data()
+    _, X = PCA_SVD(X, n_components=50)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     
     mlp = MLP(num_features=X.shape[1])
